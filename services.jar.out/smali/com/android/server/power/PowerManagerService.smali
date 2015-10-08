@@ -6147,17 +6147,14 @@
 
     if-eqz v3, :cond_1
 
-    .line 2652
-    const-string v3, "ctl.start"
+    const-string v3, "sys.powerctl"
 
-    const-string v4, "pre-recovery"
+    const-string v4, "reboot,recovery"
 
     invoke-static {v3, v4}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2653
     const-wide/32 v0, 0x493e0
 
-    .line 2659
     .local v0, "duration":J
     :goto_0
     :try_start_0
@@ -6640,7 +6637,7 @@
 
     .line 685
     .local v1, "resources":Landroid/content/res/Resources;
-    const v2, 0x1120071
+    const v2, #android:bool@config_powerDecoupleAutoSuspendModeFromDisplay#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -6648,8 +6645,7 @@
 
     iput-boolean v2, p0, Lcom/android/server/power/PowerManagerService;->mDecoupleHalAutoSuspendModeFromDisplayConfig:Z
 
-    .line 687
-    const v2, 0x1120072
+    const v2, #android:bool@config_powerDecoupleInteractiveModeFromDisplay#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -6657,8 +6653,7 @@
 
     iput-boolean v2, p0, Lcom/android/server/power/PowerManagerService;->mDecoupleHalInteractiveModeFromDisplayConfig:Z
 
-    .line 689
-    const v2, 0x1120025
+    const v2, #android:bool@config_unplugTurnsOnScreen#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -6666,8 +6661,7 @@
 
     iput-boolean v2, p0, Lcom/android/server/power/PowerManagerService;->mWakeUpWhenPluggedOrUnpluggedConfig:Z
 
-    .line 691
-    const v2, 0x1120029
+    const v2, #android:bool@config_allowTheaterModeWakeFromUnplug#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -6675,8 +6669,7 @@
 
     iput-boolean v2, p0, Lcom/android/server/power/PowerManagerService;->mWakeUpWhenPluggedOrUnpluggedInTheaterModeConfig:Z
 
-    .line 693
-    const v2, 0x112003a
+    const v2, #android:bool@config_suspendWhenScreenOffDueToProximity#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -6684,8 +6677,7 @@
 
     iput-boolean v2, p0, Lcom/android/server/power/PowerManagerService;->mSuspendWhenScreenOffDueToProximityConfig:Z
 
-    .line 695
-    const v2, 0x112006b
+    const v2, #android:bool@config_dreamsSupported#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -6693,8 +6685,7 @@
 
     iput-boolean v2, p0, Lcom/android/server/power/PowerManagerService;->mDreamsSupportedConfig:Z
 
-    .line 697
-    const v2, 0x112006c
+    const v2, #android:bool@config_dreamsEnabledByDefault#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -6702,8 +6693,7 @@
 
     iput-boolean v2, p0, Lcom/android/server/power/PowerManagerService;->mDreamsEnabledByDefaultConfig:Z
 
-    .line 699
-    const v2, 0x112006e
+    const v2, #android:bool@config_dreamsActivatedOnSleepByDefault#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -6711,8 +6701,7 @@
 
     iput-boolean v2, p0, Lcom/android/server/power/PowerManagerService;->mDreamsActivatedOnSleepByDefaultConfig:Z
 
-    .line 701
-    const v2, 0x112006d
+    const v2, #android:bool@config_dreamsActivatedOnDockByDefault#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -6720,8 +6709,7 @@
 
     iput-boolean v2, p0, Lcom/android/server/power/PowerManagerService;->mDreamsActivatedOnDockByDefaultConfig:Z
 
-    .line 703
-    const v2, 0x112006f
+    const v2, #android:bool@config_dreamsEnabledOnBattery#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -6729,8 +6717,7 @@
 
     iput-boolean v2, p0, Lcom/android/server/power/PowerManagerService;->mDreamsEnabledOnBatteryConfig:Z
 
-    .line 705
-    const v2, 0x10e0074
+    const v2, #android:integer@config_dreamsBatteryLevelMinimumWhenPowered#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -6738,8 +6725,7 @@
 
     iput v2, p0, Lcom/android/server/power/PowerManagerService;->mDreamsBatteryLevelMinimumWhenPoweredConfig:I
 
-    .line 707
-    const v2, 0x10e0075
+    const v2, #android:integer@config_dreamsBatteryLevelMinimumWhenNotPowered#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -6747,8 +6733,7 @@
 
     iput v2, p0, Lcom/android/server/power/PowerManagerService;->mDreamsBatteryLevelMinimumWhenNotPoweredConfig:I
 
-    .line 709
-    const v2, 0x10e0076
+    const v2, #android:integer@config_dreamsBatteryLevelDrainCutoff#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -6756,8 +6741,7 @@
 
     iput v2, p0, Lcom/android/server/power/PowerManagerService;->mDreamsBatteryLevelDrainCutoffConfig:I
 
-    .line 711
-    const v2, 0x1120070
+    const v2, #android:bool@config_dozeAfterScreenOff#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -6765,8 +6749,7 @@
 
     iput-boolean v2, p0, Lcom/android/server/power/PowerManagerService;->mDozeAfterScreenOffConfig:Z
 
-    .line 713
-    const v2, 0x10e0077
+    const v2, #android:integer@config_minimumScreenOffTimeout#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -6774,8 +6757,7 @@
 
     iput v2, p0, Lcom/android/server/power/PowerManagerService;->mMinimumScreenOffTimeoutConfig:I
 
-    .line 715
-    const v2, 0x10e0078
+    const v2, #android:integer@config_maximumScreenDimDuration#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -6783,8 +6765,7 @@
 
     iput v2, p0, Lcom/android/server/power/PowerManagerService;->mMaximumScreenDimDurationConfig:I
 
-    .line 717
-    const v2, 0x1130002
+    const v2, #android:fraction@config_maximumScreenDimRatio#t
 
     invoke-virtual {v1, v2, v4, v4}, Landroid/content/res/Resources;->getFraction(III)F
 
@@ -6792,8 +6773,7 @@
 
     iput v2, p0, Lcom/android/server/power/PowerManagerService;->mMaximumScreenDimRatioConfig:F
 
-    .line 719
-    const v2, 0x10e0086
+    const v2, #android:integer@config_proximityCheckTimeout#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -6801,8 +6781,7 @@
 
     iput v2, p0, Lcom/android/server/power/PowerManagerService;->mProximityTimeOut:I
 
-    .line 721
-    const v2, 0x11200b5
+    const v2, #android:bool@config_proximityCheckOnWake#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -6810,8 +6789,7 @@
 
     iput-boolean v2, p0, Lcom/android/server/power/PowerManagerService;->mProximityWakeSupported:Z
 
-    .line 723
-    const v2, 0x11200b6
+    const v2, #android:bool@config_proximityCheckOnWakeEnabledByDefault#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
