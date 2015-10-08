@@ -70,6 +70,77 @@
     return-void
 .end method
 
+.method public constructor <init>(ILjava/lang/String;ILjava/lang/CharSequence;Ljava/lang/CharSequence;IILjava/lang/String;ILandroid/graphics/Bitmap;IILjava/lang/String;II)V
+    .locals 0
+    .param p1, "id"    # I
+    .param p2, "iccId"    # Ljava/lang/String;
+    .param p3, "simSlotIndex"    # I
+    .param p4, "displayName"    # Ljava/lang/CharSequence;
+    .param p5, "carrierName"    # Ljava/lang/CharSequence;
+    .param p6, "nameSource"    # I
+    .param p7, "iconTint"    # I
+    .param p8, "number"    # Ljava/lang/String;
+    .param p9, "roaming"    # I
+    .param p10, "icon"    # Landroid/graphics/Bitmap;
+    .param p11, "mcc"    # I
+    .param p12, "mnc"    # I
+    .param p13, "countryIso"    # Ljava/lang/String;
+    .param p14, "status"    # I
+    .param p15, "nwMode"    # I
+
+    .prologue
+    .line 126
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 127
+    iput p1, p0, Landroid/telephony/SubscriptionInfo;->mId:I
+
+    .line 128
+    iput-object p2, p0, Landroid/telephony/SubscriptionInfo;->mIccId:Ljava/lang/String;
+
+    .line 129
+    iput p3, p0, Landroid/telephony/SubscriptionInfo;->mSimSlotIndex:I
+
+    .line 130
+    iput-object p4, p0, Landroid/telephony/SubscriptionInfo;->mDisplayName:Ljava/lang/CharSequence;
+
+    .line 131
+    iput-object p5, p0, Landroid/telephony/SubscriptionInfo;->mCarrierName:Ljava/lang/CharSequence;
+
+    .line 132
+    iput p6, p0, Landroid/telephony/SubscriptionInfo;->mNameSource:I
+
+    .line 133
+    iput p7, p0, Landroid/telephony/SubscriptionInfo;->mIconTint:I
+
+    .line 134
+    iput-object p8, p0, Landroid/telephony/SubscriptionInfo;->mNumber:Ljava/lang/String;
+
+    .line 135
+    iput p9, p0, Landroid/telephony/SubscriptionInfo;->mDataRoaming:I
+
+    .line 136
+    iput-object p10, p0, Landroid/telephony/SubscriptionInfo;->mIconBitmap:Landroid/graphics/Bitmap;
+
+    .line 137
+    iput p11, p0, Landroid/telephony/SubscriptionInfo;->mMcc:I
+
+    .line 138
+    iput p12, p0, Landroid/telephony/SubscriptionInfo;->mMnc:I
+
+    .line 139
+    iput p14, p0, Landroid/telephony/SubscriptionInfo;->mStatus:I
+
+    .line 140
+    iput p15, p0, Landroid/telephony/SubscriptionInfo;->mNwMode:I
+
+    .line 141
+    iput-object p13, p0, Landroid/telephony/SubscriptionInfo;->mCountryIso:Ljava/lang/String;
+
+    .line 142
+    return-void
+.end method
+
 .method public constructor <init>(ILjava/lang/String;ILjava/lang/CharSequence;Ljava/lang/CharSequence;IILjava/lang/String;ILandroid/graphics/Bitmap;IILjava/lang/String;III)V
     .locals 1
     .param p1, "id"    # I
