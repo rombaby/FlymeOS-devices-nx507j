@@ -48,6 +48,8 @@
 
 .field public final applicationScale:F
 
+.field public final isThemeable:Z
+
 .field private final mCompatibilityFlags:I
 
 
