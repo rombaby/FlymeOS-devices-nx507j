@@ -15656,7 +15656,7 @@
 .end method
 
 .method getTopLevelResources(Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;ILandroid/content/res/Configuration;Landroid/app/LoadedApk;Landroid/content/Context;Ljava/lang/String;)Landroid/content/res/Resources;
-    .locals 12
+    .locals 11
     .param p1, "resDir"    # Ljava/lang/String;
     .param p2, "splitResDirs"    # [Ljava/lang/String;
     .param p3, "overlayDirs"    # [Ljava/lang/String;
@@ -15677,19 +15677,13 @@
 
     const/4 v9, 0x0
 
-    invoke-virtual/range {p7 .. p7}, Landroid/app/LoadedApk;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
-
-    move-result-object v1
-
-    iget-boolean v11, v1, Landroid/content/pm/ApplicationInfo;->isThemeable:Z
-
     move-object v1, p1
 
     move-object v2, p2
 
     move-object v3, p3
 
-    move-object/from16 v4, p4
+    move-object v4, p4
 
     move/from16 v5, p5
 
@@ -15699,7 +15693,7 @@
 
     move-object/from16 v10, p8
 
-    invoke-virtual/range {v0 .. v11}, Landroid/app/ResourcesManager;->getTopLevelResources(Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;ILjava/lang/String;Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;Landroid/os/IBinder;Landroid/content/Context;Z)Landroid/content/res/Resources;
+    invoke-virtual/range {v0 .. v10}, Landroid/app/ResourcesManager;->getTopLevelResources(Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;ILjava/lang/String;Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;Landroid/os/IBinder;Landroid/content/Context;)Landroid/content/res/Resources;
 
     move-result-object v0
 
