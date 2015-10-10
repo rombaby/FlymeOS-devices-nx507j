@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:key="pref_root"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/mokee_version_info_title">
+        <PreferenceScreen android:title="@string/mokee_version_title" android:key="mokee_version" />
+        <PreferenceScreen android:title="@string/mokee_version_type_title" android:key="mokee_version_type" />
+        <PreferenceScreen android:title="@string/mokee_last_check_title" android:key="mokee_last_check" />
+    </PreferenceCategory>
+    <ListPreference android:persistent="false" android:entries="@array/update_check_entries" android:title="@string/update_check_title" android:key="pref_update_interval" android:dialogTitle="@string/update_check_title" android:entryValues="@array/update_check_values" />
+    <SwitchPreference android:title="@string/pref_ota_check" android:key="pref_ota_check" android:summary="@string/pref_ota_check_summary" />
+    <ListPreference android:persistent="false" android:title="@string/update_type_title" android:key="pref_update_types" android:dialogTitle="@string/update_type_title" />
+    <PreferenceCategory android:title="@string/available_updates_title" android:key="updates_category" />
+    <com.mokee.helper.widget.AdmobPreference android:selectable="false" android:key="pref_admob" />
+</PreferenceScreen>

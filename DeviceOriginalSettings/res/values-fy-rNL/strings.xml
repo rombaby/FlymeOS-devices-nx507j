@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="toggleNfc">NFC</string>
+    <string name="blacklist_prefs">Ynstellingen</string>
+    <string name="pa_login_username_hint">Brûkersnamme (e-mail)</string>
+    <string name="navigation_save_button_text">Bewarje</string>
+    <string name="notification_light_voicemail_title">Voicemail</string>
+    <string name="profile_tabs_nfc">NFC</string>
+    <string name="screencolor_save">Bewarje</string>
+    <string name="screencolor_cancel">Annulearje</string>
+    <string name="qs_tile_nfc">NFC</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <SeekBar android:id="@id/price" android:layout_width="fill_parent" android:layout_height="wrap_content" android:max="490" android:progress="0" android:paddingStart="25.0dip" android:paddingEnd="25.0dip" />
+    <ProgressBar android:id="@id/progress" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="20.0dip" android:paddingEnd="20.0dip" style="?android:attr/progressBarStyleHorizontal" />
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:textColor="@android:color/holo_red_dark" android:id="@id/request" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</LinearLayout>

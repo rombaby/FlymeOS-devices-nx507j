@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/smartcontrol_settings_title"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.flyme.deviceoriginalsettings">
+    <PreferenceCategory android:title="@string/battery_optimizer_title" android:key="battery_optimizer">
+        <PreferenceScreen android:title="@string/wakelock_blocker_title" android:key="wakelock_blocker" android:fragment="com.flyme.deviceoriginalsettings.mokee.WakeLockBlocker" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/recents_panel_settings_title" android:key="recents_panel_settings">
+        <PreferenceScreen android:title="@string/clear_all_settings_title" android:key="clear_all_settings" android:fragment="com.flyme.deviceoriginalsettings.mokee.RecentsSettings" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/direct_control_title" android:key="direct_control">
+        <SwitchPreference android:title="@string/direct_call_for_dialer_title" android:key="direct_call_for_dialer" android:summary="@string/direct_call_for_dialer_summary" />
+        <SwitchPreference android:title="@string/direct_call_for_mms_title" android:key="direct_call_for_mms" android:summary="@string/direct_call_for_mms_summary" />
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Snackbar.Text.Action" parent="@style/Snackbar.Text">
+        <item name="android:textColor">@color/sb_action_text_color</item>
+        <item name="android:background">@drawable/sb_btn_bg</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <SwitchPreference android:title="@string/mokee_news_title" android:key="mokee_news" android:summary="@string/mokee_news_summary" />
+    <PreferenceScreen android:title="@string/mokee_website_title" android:key="mokee_website" android:summary="@string/mokee_website_summary" />
+    <PreferenceScreen android:title="@string/mokee_forum_title" android:key="mokee_forum" android:summary="@string/mokee_forum_summary" />
+    <PreferenceScreen android:title="@string/mokee_issues_title" android:key="mokee_issues" android:summary="@string/mokee_issues_summary" />
+    <PreferenceScreen android:title="@string/mokee_changelog_title" android:key="mokee_changelog" android:summary="@string/mokee_changelog_summary" />
+    <PreferenceScreen android:title="@string/mokee_build_status_title" android:key="mokee_build_status" android:summary="@string/mokee_build_status_summary" />
+    <PreferenceScreen android:title="@string/mokee_github_title" android:key="mokee_github" android:summary="@string/mokee_github_summary" />
+    <PreferenceScreen android:title="@string/mokee_translate_title" android:key="mokee_translate" android:summary="@string/mokee_translate_summary" />
+    <PreferenceScreen android:title="@string/mokee_wiki_title" android:key="mokee_wiki" android:summary="@string/mokee_wiki_summary" />
+</PreferenceScreen>

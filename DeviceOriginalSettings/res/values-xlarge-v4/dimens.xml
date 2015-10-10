@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="sb_bg_corner_radius">2.0dip</dimen>
+    <dimen name="sb_offset">24.0dip</dimen>
+    <dimen name="sb_min_width">288.0dip</dimen>
+    <dimen name="sb_max_width">568.0dip</dimen>
+    <dimen name="screen_margin_sides">128.0dip</dimen>
+    <dimen name="datetime_margin_top">154.0dip</dimen>
+    <dimen name="datetime_margin_bottom">96.0dip</dimen>
+</resources>

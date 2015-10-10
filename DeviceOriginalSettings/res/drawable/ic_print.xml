@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bitmap android:src="@android:drawable/ic_sim_card_multi_24px_clr" android:tint="@android:color/material_blue_grey_950"
+  xmlns:android="http://schemas.android.com/apk/res/android" />
