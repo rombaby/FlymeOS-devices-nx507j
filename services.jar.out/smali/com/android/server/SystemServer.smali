@@ -3075,13 +3075,13 @@
 
     invoke-virtual {v4, v5}, Lcom/android/server/SystemServiceManager;->startService(Ljava/lang/Class;)Lcom/android/server/SystemService;
 
-    .line 961
     :cond_1d
     if-nez v64, :cond_1e
 
     if-nez v58, :cond_1e
 
-    .line 963
+    goto :goto_flyme_0
+
     :try_start_39
     const-string v4, "SystemServer"
 
@@ -3117,6 +3117,7 @@
     .restart local v37    # "atlas":Lcom/android/server/AssetAtlasService;
     :cond_1e
     :goto_27
+    :goto_flyme_0
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v4
