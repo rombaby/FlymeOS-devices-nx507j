@@ -1,0 +1,33 @@
+
+#ZTEMT ADD for NBSecurity
+service nubia_rt /system/bin/security_process /system/framework cn.nubia.security.core.service.ServiceRun
+    class main
+    disabled
+
+on property:sys.boot_completed=1
+	start nubia_rt
+
+on property:sys.boot_completed=0
+	stop nubia_rt
+
+#END
+
+#ztemt add for clockwidget
+service clockdaemon /system/bin/clockdaemon
+    class main
+    seclabel u:r:clock:s0
+#ztemt end
+
+#ztemt add for nubia powermanage
+service nproot /system/bin/app_process /system/framework cn.nubia.powermanage.service.MainServiceThread
+    class main
+    disabled
+	seclabel u:r:npm:s0
+
+on property:sys.npm.nproot=1
+    start nproot
+
+on property:sys.npm.nproot=0
+    stop nproot
+
+#ztemt add end

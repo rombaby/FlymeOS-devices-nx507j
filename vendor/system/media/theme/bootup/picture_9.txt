@@ -1,0 +1,41 @@
+10 6
+2 4
+38
+0 0 2 2 竹海大观
+2 0 3 1 bolin
+3 0 4 2 午夜烟灰缸
+4 0 5 1 琳达琳达
+5 0 6 2 Dr_karen
+2 1 3 2 周子迁
+4 1 5 2 竹海大观
+0 2 1 3 csqiuson
+1 2 2 3 聆视觉
+2 2 3 3 csqiuson
+3 2 5 4 Drunkphone
+5 2 6 3 聆视觉
+0 3 2 5 刘小牛
+2 3 3 4 夕阳无限好
+5 3 6 4 凌乱的徘徊
+2 4 3 6 chinesesun
+3 4 4 5 AJmo
+4 4 5 5 志气小青年
+5 4 6 6 chinesesun
+0 5 1 6 我是小少威
+1 5 2 6 庄?绫云
+3 5 4 6 子旭制造
+4 5 5 6 alessandro1
+0 6 1 7 醉梦园丁
+1 6 2 7 志气小青年
+2 6 3 7 astronomy
+3 6 4 7 Dr_karen
+4 6 5 7 alwaysksy
+5 6 6 7 刘德华2
+0 7 3 9 Drunkphone
+3 7 4 8 csqiuson
+4 7 6 9 buzai
+3 8 4 9 buzai
+0 9 1 10 Drunkphone
+1 9 2 10 defcomk
+2 9 3 10 defcomk
+3 9 5 10 竹海大观
+5 9 6 10 雾林
