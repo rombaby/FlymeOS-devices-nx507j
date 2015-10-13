@@ -314,38 +314,31 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 319
     const-string v2, "service.shutdown.exit"
 
     const-string v3, "0"
 
     invoke-static {v2, v3}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 322
     new-instance v1, Landroid/content/Intent;
 
     invoke-direct {v1}, Landroid/content/Intent;-><init>()V
 
-    .line 323
     .local v1, "intent":Landroid/content/Intent;
     const-class v2, Lcn/nubia/server/power/ShutdownAniActivity;
 
     invoke-virtual {v1, p0, v2}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
 
-    .line 324
     const/high16 v2, 0x10000000
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 325
     invoke-virtual {p0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 342
     sget-object v2, Lcom/android/server/power/ShutdownThread;->sInstance:Lcom/android/server/power/ShutdownThread;
 
     iput-object p0, v2, Lcom/android/server/power/ShutdownThread;->mContext:Landroid/content/Context;
 
-    .line 343
     sget-object v3, Lcom/android/server/power/ShutdownThread;->sInstance:Lcom/android/server/power/ShutdownThread;
 
     const-string v2, "power"
@@ -1189,7 +1182,7 @@
 
     move-result-object v5
 
-    const v6, 0x1070035
+    const v6, #android:array@config_globalActionsList#t
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -1225,7 +1218,7 @@
 
     move-result-object v5
 
-    const v6, 0x10e003c
+    const v6, #android:integer@config_longPressOnPowerBehavior#t
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1237,7 +1230,7 @@
 
     if-eqz v5, :cond_4
 
-    const v3, 0x10400fe
+    const v3, #android:string@reboot_safemode_confirm#t
 
     .line 178
     .local v3, "resourceId":I
@@ -1248,10 +1241,8 @@
 
     if-nez v5, :cond_2
 
-    .line 179
-    const v3, 0x1040100
+    const v3, #android:string@reboot_confirm#t
 
-    .line 182
     :cond_2
     const-string v5, "ShutdownThread"
 
@@ -1312,7 +1303,7 @@
 
     if-ne v2, v5, :cond_5
 
-    const v3, 0x10400fc
+    const v3, #android:string@shutdown_confirm_question#t
 
     goto :goto_2
 
@@ -1326,7 +1317,7 @@
     goto :goto_2
 
     :cond_6
-    const v3, 0x10400fb
+    const v3, #android:string@shutdown_confirm#t
 
     goto :goto_2
 .end method

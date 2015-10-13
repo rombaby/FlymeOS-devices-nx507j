@@ -33,6 +33,8 @@
 
 
 # instance fields
+.field mFlymeWallpaperService:Lcom/android/server/wallpaper/FlymeWallpaperService;
+
 .field final mContext:Landroid/content/Context;
 
 .field mCurrentUserId:I
@@ -110,7 +112,7 @@
 
     move-result-object v0
 
-    const v1, 0x104001f
+    const v1, #android:string@image_wallpaper_component#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -946,7 +948,7 @@
 
     move-result-object v8
 
-    const v9, 0x1080291
+    const v9, #android:drawable@default_wallpaper#t
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
     :try_end_4
@@ -3722,20 +3724,17 @@
 
     invoke-direct {v13, v0, v1, v2}, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperConnection;-><init>(Lcom/android/server/wallpaper/WallpaperManagerService;Landroid/app/WallpaperInfo;Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperData;)V
 
-    .line 987
     .local v13, "newConn":Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperConnection;
     move-object/from16 v0, p1
 
     invoke-virtual {v11, v0}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 988
     const-string v3, "android.intent.extra.client_label"
 
-    const v4, 0x104054a
+    const v4, #android:string@wallpaper_binding_label#t
 
     invoke-virtual {v11, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 990
     const-string v19, "android.intent.extra.client_intent"
 
     move-object/from16 v0, p0
@@ -3754,7 +3753,7 @@
 
     iget-object v6, v0, Lcom/android/server/wallpaper/WallpaperManagerService;->mContext:Landroid/content/Context;
 
-    const v7, 0x104054b
+    const v7, #android:string@chooser_wallpaper#t
 
     invoke-virtual {v6, v7}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -5353,11 +5352,11 @@
 
     invoke-direct {v1, v2, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 600
     .local v1, "wallpaperInfoFile":Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->delete()Z
 
-    .line 601
+    invoke-direct/range {p0 .. p1}, Lcom/android/server/wallpaper/WallpaperManagerService;->mzonRemoveUser(I)V
+
     monitor-exit v3
 
     goto :goto_0
@@ -7667,6 +7666,77 @@
     invoke-direct {p0, p1, p2, v0}, Lcom/android/server/wallpaper/WallpaperManagerService;->updateWallpaperBitmapLockedInner(Ljava/lang/String;Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperData;Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;
 
     move-result-object v0
+
+    return-object v0
+.end method
+
+.method private mzonRemoveUser(I)V
+    .locals 1
+    .param p1, "userId"    # I
+
+    .prologue
+    iget-object v0, p0, Lcom/android/server/wallpaper/WallpaperManagerService;->mFlymeWallpaperService:Lcom/android/server/wallpaper/FlymeWallpaperService;
+
+    invoke-virtual {v0, p1}, Lcom/android/server/wallpaper/FlymeWallpaperService;->onRemoveUser(I)V
+
+    return-void
+.end method
+
+.method public mzGetCurrentUserId()I
+    .locals 1
+
+    .prologue
+    iget v0, p0, Lcom/android/server/wallpaper/WallpaperManagerService;->mCurrentUserId:I
+
+    return v0
+.end method
+
+.method public mzGetSyncObject()Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    iget-object v0, p0, Lcom/android/server/wallpaper/WallpaperManagerService;->mLock:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public mzGetWallpaperMap()Landroid/util/SparseArray;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Landroid/util/SparseArray",
+            "<",
+            "Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperData;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    iget-object v0, p0, Lcom/android/server/wallpaper/WallpaperManagerService;->mWallpaperMap:Landroid/util/SparseArray;
+
+    return-object v0
+.end method
+
+.method public startFlymeWallpaperService(Landroid/content/Context;)Lcom/android/server/wallpaper/FlymeWallpaperService;
+    .locals 3
+    .param p1, "context"    # Landroid/content/Context;
+
+    .prologue
+    new-instance v0, Lcom/android/server/wallpaper/FlymeWallpaperService;
+
+    invoke-direct {v0, p1, p0}, Lcom/android/server/wallpaper/FlymeWallpaperService;-><init>(Landroid/content/Context;Lcom/android/server/wallpaper/WallpaperManagerService;)V
+
+    .local v0, "mws":Lcom/android/server/wallpaper/FlymeWallpaperService;
+    iput-object v0, p0, Lcom/android/server/wallpaper/WallpaperManagerService;->mFlymeWallpaperService:Lcom/android/server/wallpaper/FlymeWallpaperService;
+
+    iget-object v1, p0, Lcom/android/server/wallpaper/WallpaperManagerService;->mFlymeWallpaperService:Lcom/android/server/wallpaper/FlymeWallpaperService;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Lcom/android/server/wallpaper/FlymeWallpaperService;->loadSettingsOfLockWallpaperLocked(I)V
+
+    invoke-static {p1}, Lmeizu/wallpaper/FlymeWallpaperManager;->getInstance(Landroid/content/Context;)Lmeizu/wallpaper/FlymeWallpaperManager;
 
     return-object v0
 .end method

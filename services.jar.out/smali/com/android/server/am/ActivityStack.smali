@@ -352,7 +352,7 @@
 
     move-result-object v0
 
-    const v1, 0x1120097
+    const v1, #android:bool@config_enablePerfBoostForAnimation#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -374,7 +374,7 @@
 
     move-result-object v0
 
-    const v1, 0x10e0089
+    const v1, #android:integer@animationboost_schedboost_param#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -391,7 +391,7 @@
 
     move-result-object v0
 
-    const v1, 0x10e0088
+    const v1, #android:integer@animationboost_timeout_param#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -408,7 +408,7 @@
 
     move-result-object v0
 
-    const v1, 0x10e008a
+    const v1, #android:integer@animationboost_cpuboost_param#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -609,48 +609,39 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 1140
     iget-object v1, p0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
 
     iput-object v0, v1, Lcom/android/server/am/ActivityManagerService;->mHomeProcess:Lcom/android/server/am/ProcessRecord;
 
-    .line 1144
     .end local v0    # "app":Lcom/android/server/am/ProcessRecord;
     :cond_0
     iget-boolean v1, p1, Lcom/android/server/am/ActivityRecord;->nowVisible:Z
 
     if-eqz v1, :cond_1
 
-    .line 1146
     iget-object v1, p0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
-    invoke-virtual {v1}, Lcom/android/server/am/ActivityStackSupervisor;->notifyActivityDrawnForKeyguard()V
+    invoke-virtual {v1}, Lcom/android/server/am/ActivityStackSupervisor;->mzNotifyActivityDrawnForKeyguard()V
 
-    .line 1150
     :cond_1
     iget-object v1, p0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
     invoke-virtual {v1, p1}, Lcom/android/server/am/ActivityStackSupervisor;->scheduleIdleTimeoutLocked(Lcom/android/server/am/ActivityRecord;)V
 
-    .line 1152
     iget-object v1, p0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
     invoke-virtual {v1, p1}, Lcom/android/server/am/ActivityStackSupervisor;->reportResumedActivityLocked(Lcom/android/server/am/ActivityRecord;)Z
 
-    .line 1154
     invoke-virtual {p1}, Lcom/android/server/am/ActivityRecord;->resumeKeyDispatchingLocked()V
 
-    .line 1155
     iget-object v1, p0, Lcom/android/server/am/ActivityStack;->mNoAnimActivities:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 1160
     iget-object v1, p1, Lcom/android/server/am/ActivityRecord;->app:Lcom/android/server/am/ProcessRecord;
 
     if-eqz v1, :cond_4
 
-    .line 1161
     iget-object v1, p0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mProcessCpuTracker:Lcom/android/internal/os/ProcessCpuTracker;

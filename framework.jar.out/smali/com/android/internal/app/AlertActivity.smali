@@ -6,6 +6,13 @@
 .implements Landroid/content/DialogInterface;
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/android/internal/app/AlertActivity$FlymeInjector;
+    }
+.end annotation
+
 # instance fields
 .field protected mAlert:Lcom/android/internal/app/AlertController;
 
@@ -73,20 +80,12 @@
 .end method
 
 .method public onContentChanged()V
-    .locals 2
+    .locals 0
 
     .prologue
-    .line 79
     invoke-super {p0}, Landroid/app/Activity;->onContentChanged()V
 
-    .line 80
-    iget-object v0, p0, Lcom/android/internal/app/AlertActivity;->mNubiaDialog:Lnubia/widget/IDialog;
-
-    invoke-virtual {p0}, Lcom/android/internal/app/AlertActivity;->getWindow()Landroid/view/Window;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lnubia/widget/IDialog;->resetShowWindowAttributes(Landroid/view/Window;)V
+    invoke-static {p0}, Lcom/android/internal/app/AlertActivity$FlymeInjector;->onAlertContentChanged(Lcom/android/internal/app/AlertActivity;)V
 
     .line 81
     return-void
@@ -265,18 +264,17 @@
     .locals 2
 
     .prologue
-    .line 119
     iget-object v0, p0, Lcom/android/internal/app/AlertActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
     iget-object v1, p0, Lcom/android/internal/app/AlertActivity;->mAlert:Lcom/android/internal/app/AlertController;
 
     invoke-virtual {v0, v1}, Lcom/android/internal/app/AlertController$AlertParams;->apply(Lcom/android/internal/app/AlertController;)V
 
-    .line 120
     iget-object v0, p0, Lcom/android/internal/app/AlertActivity;->mAlert:Lcom/android/internal/app/AlertController;
 
     invoke-virtual {v0}, Lcom/android/internal/app/AlertController;->installContent()V
 
-    .line 121
+    invoke-static/range {p0 .. p0}, Lcom/android/internal/app/AlertActivity$FlymeInjector;->applyMeizuStyle(Lcom/android/internal/app/AlertActivity;)V
+
     return-void
 .end method
