@@ -34192,7 +34192,7 @@
 
     invoke-static {v0, v1}, Lcom/android/server/wm/InjectorWMS;->adjustMoveWindowBackupWindowFlag(Lcom/android/server/wm/WindowState;Landroid/view/WindowManager$LayoutParams;)V
 
-    move-object/from16 v0, v30
+    move-object/from16 v0, v31
 
     iget-object v0, v0, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
 

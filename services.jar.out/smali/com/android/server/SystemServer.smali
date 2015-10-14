@@ -1857,7 +1857,7 @@
     :try_start_9
     move-object/from16 v0, p0
 
-    move-object/from16 v5, v113
+    move-object/from16 v5, v112
 
     invoke-static {v0, v5}, Lcom/android/server/SystemServer$FlymeInjector;->startFlymeMoveWindowService(Lcom/android/server/SystemServer;Lcom/android/server/wm/WindowManagerService;)V
 

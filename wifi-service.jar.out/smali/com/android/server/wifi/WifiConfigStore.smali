@@ -19385,7 +19385,7 @@
     :cond_4
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v13, v4}, Lcom/android/server/wifi/WifiConfigStore;->mzSetKeyEncry(Ljava/lang/String;Landroid/net/wifi/WifiConfiguration;)V
+    invoke-direct {v0, v14, v4}, Lcom/android/server/wifi/WifiConfigStore;->mzSetKeyEncry(Ljava/lang/String;Landroid/net/wifi/WifiConfiguration;)V
 
     iget v0, v4, Landroid/net/wifi/WifiConfiguration;->priority:I
 
