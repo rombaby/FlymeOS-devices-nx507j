@@ -602,6 +602,8 @@
 
     iput v2, p0, Landroid/net/wifi/WifiConfiguration;->SIMNum:I
 
+    invoke-direct/range {p0 .. p0}, Landroid/net/wifi/WifiConfiguration;->initFlymeExtFields()V
+
     return-void
 .end method
 
@@ -1025,6 +1027,9 @@
     iget v1, p1, Landroid/net/wifi/WifiConfiguration;->SIMNum:I
 
     iput v1, p0, Landroid/net/wifi/WifiConfiguration;->SIMNum:I
+
+
+    invoke-direct/range {p0 .. p1}, Landroid/net/wifi/WifiConfiguration;->initFlymeExtFields(Landroid/net/wifi/WifiConfiguration;)V
 
     .end local v0    # "i":I
     :cond_5
@@ -3864,6 +3869,12 @@
 
     .line 1142
     :cond_1c
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v28
+
+    invoke-direct {v0, v1}, Landroid/net/wifi/WifiConfiguration;->toStringExt(Ljava/lang/StringBuilder;)V
+
     const/16 v29, 0xa
 
     invoke-virtual/range {v28 .. v29}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;

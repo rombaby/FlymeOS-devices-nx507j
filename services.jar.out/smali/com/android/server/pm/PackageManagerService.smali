@@ -2258,6 +2258,8 @@
     move-object/from16 v0, v20
 
     invoke-virtual {v0, v2}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+    
+    invoke-static/range {v20 .. v20}, Lcom/android/server/pm/InjectorPMS;->mzAddAlreadyDexOpted(Ljava/util/HashSet;)V
 
     invoke-virtual/range {v40 .. v40}, Ljava/io/File;->list()[Ljava/lang/String;
 
@@ -49159,7 +49161,7 @@
 
     move/from16 v2, v22
 
-    invoke-direct {v0, v1, v7, v2}, Lcom/android/server/pm/PackageManagerService;->performBootDexOpt(Landroid/content/pm/PackageParser$Package;II)V
+    invoke-direct {v0, v1, v7, v2}, Lcom/android/server/pm/PackageManagerService;->mzperformBootDexOpt(Landroid/content/pm/PackageParser$Package;II)V
 
     goto :goto_8
 

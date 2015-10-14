@@ -7,6 +7,12 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/widget/Editor$PastePanelOnClickListener;,
+        Landroid/widget/Editor$FlymeInjector;,
+        Landroid/widget/Editor$MzInsertionPointCursorController;,
+        Landroid/widget/Editor$MzShowSuggestionsRunnable;,
+        Landroid/widget/Editor$MzStartSelectionActionRunnable;,
+        Landroid/widget/Editor$OptionHandle;,
+        Landroid/widget/Editor$OptionWrapper;,
         Landroid/widget/Editor$TextModifyOperation;,
         Landroid/widget/Editor$UndoInputFilter;,
         Landroid/widget/Editor$InputMethodState;,
@@ -247,6 +253,8 @@
     iput-boolean v2, p0, Landroid/widget/Editor;->mIsInTextSelectionMode:Z
 
     iput-object p1, p0, Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
+
+    invoke-static/range {p0 .. p0}, Landroid/widget/Editor$FlymeInjector;->initExtFlymeFields(Landroid/widget/Editor;)V
 
     invoke-virtual {p1}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
 
@@ -4735,6 +4743,48 @@
     goto :goto_0
 .end method
 
+.method getInsertionController()Landroid/widget/Editor$InsertionPointCursorController;
+    .locals 3
+
+    .prologue
+    const/4 v1, 0x0
+
+    iget-boolean v2, p0, Landroid/widget/Editor;->mInsertionControllerEnabled:Z
+
+    if-nez v2, :cond_0
+
+    :goto_0
+    return-object v1
+
+    :cond_0
+    iget-object v2, p0, Landroid/widget/Editor;->mInsertionPointCursorController:Landroid/widget/Editor$InsertionPointCursorController;
+
+    if-nez v2, :cond_1
+
+    new-instance v2, Landroid/widget/Editor$MzInsertionPointCursorController;
+
+    invoke-direct {v2, p0, v1}, Landroid/widget/Editor$MzInsertionPointCursorController;-><init>(Landroid/widget/Editor;Landroid/widget/Editor$1;)V
+
+    iput-object v2, p0, Landroid/widget/Editor;->mInsertionPointCursorController:Landroid/widget/Editor$InsertionPointCursorController;
+
+    iget-object v1, p0, Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
+
+    invoke-virtual {v1}, Landroid/widget/TextView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    move-result-object v0
+
+    .local v0, "observer":Landroid/view/ViewTreeObserver;
+    iget-object v1, p0, Landroid/widget/Editor;->mInsertionPointCursorController:Landroid/widget/Editor$InsertionPointCursorController;
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->addOnTouchModeChangeListener(Landroid/view/ViewTreeObserver$OnTouchModeChangeListener;)V
+
+    .end local v0    # "observer":Landroid/view/ViewTreeObserver;
+    :cond_1
+    iget-object v1, p0, Landroid/widget/Editor;->mInsertionPointCursorController:Landroid/widget/Editor$InsertionPointCursorController;
+
+    goto :goto_0
+.end method
+
 .method getMagnifierController()Lnubia/widget/TextMagnifierController;
     .locals 1
 
@@ -7036,6 +7086,9 @@
     iput-object v8, p0, Landroid/widget/Editor;->mMagnifierController:Lnubia/widget/TextMagnifierController;
 
     :cond_4
+
+    invoke-static/range {p0 .. p0}, Landroid/widget/Editor$FlymeInjector;->updateBackground(Landroid/widget/Editor;)V
+
     return-void
 
     .end local v0    # "enabled":Z
@@ -7772,6 +7825,8 @@
     invoke-virtual {v0}, Landroid/view/ActionMode;->finish()V
 
     :cond_0
+    invoke-static/range {p0 .. p0}, Landroid/widget/Editor$FlymeInjector;->hideSelectionModifierCursorController(Landroid/widget/Editor;)V
+
     invoke-virtual {p0}, Landroid/widget/Editor;->stopTextSelectionMode()V
 
     return-void

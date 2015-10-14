@@ -794,6 +794,11 @@
     move-result-object v2
 
     .local v2, "touchedWin":Lcom/android/server/wm/WindowState;
+    
+    move-object/from16 v0, p0
+    
+    invoke-direct {v0, v2}, Lcom/android/server/wm/DragState;->mzNotifyDropLw(Lcom/android/server/wm/WindowState;)V
+
     if-nez v2, :cond_1
 
     const/4 v3, 0x0

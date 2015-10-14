@@ -347,6 +347,14 @@ on post-fs-data
     #set property sys.android.reboot flag to 0 
     setprop sys.android.reboot 0
 
+    # Flyme kuangqianbo for samba server and client {@
+    mkdir /data/misc/samba 0775 system system
+    mkdir /data/misc/samba/remote 0775 system system
+    mkdir /data/misc/samba/lib 0775 system system
+    mkdir /data/misc/samba/private 0775 system system
+    mkdir /data/misc/samba/tmp 0775 system system
+    mkdir /data/misc/samba/var 0775 system system
+    # @}
 on boot
     # basic network init
     ifup lo
@@ -725,6 +733,12 @@ service netd /system/bin/netd
 service logRedirector /system/bin/logRedirector
     class main
     socket logRedirector stream 0660 root system
+
+# Flyme kuangqianbo add for meizu own daemon { @
+service flymed /system/bin/flymed
+    class main
+    socket flymed stream 0660 root system
+# @ }
 
 service debuggerd /system/bin/debuggerd
     class main

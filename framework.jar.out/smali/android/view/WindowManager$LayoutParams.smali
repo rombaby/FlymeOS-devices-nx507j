@@ -2147,6 +2147,12 @@
     or-int/2addr v0, v2
 
     :cond_1f
+    invoke-static {p0, p1, v0}, Landroid/view/WindowManager$LayoutParams$FlymeInjector;->copyFrom(Landroid/view/WindowManager$LayoutParams;Landroid/view/WindowManager$LayoutParams;I)I
+
+    move-result v2
+
+    or-int/2addr v0, v2
+
     sget-boolean v2, Landroid/util/PowerMoConfig;->WITHOUT_ALL:Z
 
     if-nez v2, :cond_20

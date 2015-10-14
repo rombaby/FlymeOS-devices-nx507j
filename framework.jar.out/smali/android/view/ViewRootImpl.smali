@@ -5866,6 +5866,11 @@
 
     .local v47, "layoutRequested":Z
     :goto_5
+    
+    invoke-direct/range {p0 .. p0}, Landroid/view/ViewRootImpl;->mzSetLayoutRequested()Z
+
+    move-result v47
+
     if-eqz v47, :cond_d
 
     move-object/from16 v0, p0
@@ -7982,7 +7987,9 @@
 
     iget-boolean v4, v0, Landroid/view/ViewRootImpl;->mStopped:Z
 
-    if-nez v4, :cond_58
+    if-nez v4, :cond_flyme_0
+
+    :goto_flyme_0
 
     .line 1804
     and-int/lit8 v4, v54, 0x1
@@ -8177,6 +8184,7 @@
     .end local v49    # "measureAgain":Z
     .end local v66    # "width":I
     :cond_58
+    :cond_flyme_1
     :goto_18
     if-eqz v47, :cond_6d
 
@@ -8191,6 +8199,14 @@
     .line 1877
     .local v34, "didLayout":Z
     :goto_19
+    move-object/from16 v0, p0
+
+    move/from16 v1, v47
+
+    invoke-direct {v0, v1}, Landroid/view/ViewRootImpl;->mzSetDidLayout(Z)Z
+
+    move-result v34
+
     if-nez v34, :cond_59
 
     move-object/from16 v0, p0

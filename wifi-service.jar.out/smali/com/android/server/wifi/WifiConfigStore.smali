@@ -3056,6 +3056,8 @@
 
     .line 2861
     :cond_1c
+    invoke-direct/range {p0 .. p1}, Lcom/android/server/wifi/WifiConfigStore;->mzSetKeyEncry(Landroid/net/wifi/WifiConfiguration;)V
+
     const/4 v13, 0x0
 
     .line 2862

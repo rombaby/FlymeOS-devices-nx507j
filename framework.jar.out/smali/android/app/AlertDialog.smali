@@ -107,6 +107,8 @@
 
     iput-object v0, p0, Landroid/app/AlertDialog;->mAlert:Lcom/android/internal/app/AlertController;
 
+    invoke-static/range {p0 .. p0}, Landroid/app/AlertDialog$FlymeInject;->setIsThemeDeviceDefaultLight(Landroid/app/AlertDialog;)V
+
     invoke-static {p1}, Lnubia/util/UiUtils;->isNubiaUi(Landroid/content/Context;)Z
 
     move-result v0

@@ -5499,6 +5499,8 @@
     .line 956
     .end local v17    # "e":Landroid/os/RemoteException;
     :cond_21
+    invoke-static/range {v34 .. v34}, Lcom/android/server/am/InjectorAMS;->setCurrentBroadcastRecord(Lcom/android/server/am/BroadcastRecord;)V
+
     const-string v4, "sys.quickboot.enable"
 
     const/4 v6, 0x0

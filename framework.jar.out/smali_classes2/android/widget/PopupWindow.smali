@@ -40,6 +40,8 @@
 # instance fields
 .field private isNubiaMorePopup:Z
 
+.field public mMzHelper:Landroid/widget/MzPopupWindowHelper;
+
 .field private mAboveAnchor:Z
 
 .field private mAboveAnchorBackgroundDrawable:Landroid/graphics/drawable/Drawable;
@@ -2924,6 +2926,10 @@
     .end local v2    # "bounds":Landroid/graphics/Rect;
     .end local v6    # "res":Landroid/content/res/Resources;
     :cond_4
+    invoke-static {p0, p1, p3, v3}, Landroid/widget/PopupWindow$FlymeInjector;->computeDisplayFrameBottom(Landroid/widget/PopupWindow;Landroid/view/View;ZLandroid/graphics/Rect;)I
+
+    move-result v1
+
     aget v8, v0, v11
 
     invoke-virtual {p1}, Landroid/view/View;->getHeight()I

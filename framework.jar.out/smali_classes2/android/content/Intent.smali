@@ -871,6 +871,8 @@
     iput-object v0, p0, Landroid/content/Intent;->mClipData:Landroid/content/ClipData;
 
     :cond_4
+    invoke-static/range {p0 .. p1}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;Landroid/content/Intent;)V
+
     iget-object v0, p1, Landroid/content/Intent;->mSmartShowExtras:Landroid/os/Bundle;
 
     if-eqz v0, :cond_5
@@ -4134,6 +4136,8 @@
     iput v4, p0, Landroid/content/Intent;->mContentUserHint:I
 
     :cond_13
+    invoke-static/range {p0 .. p1}, Landroid/content/Intent$FlymeInjector;->copyMeizuFlag(Landroid/content/Intent;Landroid/content/Intent;)V
+    
     return v0
 
     :cond_14
@@ -7403,6 +7407,8 @@
 
     iput-object v2, p0, Landroid/content/Intent;->mExtras:Landroid/os/Bundle;
 
+    invoke-static/range {p0 .. p1}, Landroid/content/Intent$FlymeInjector;->readIntentExt(Landroid/content/Intent;Landroid/os/Parcel;)V
+
     invoke-virtual {p1}, Landroid/os/Parcel;->readBundle()Landroid/os/Bundle;
 
     move-result-object v2
@@ -9122,6 +9128,8 @@
     iget-object v2, p0, Landroid/content/Intent;->mExtras:Landroid/os/Bundle;
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
+
+    invoke-static/range {p0 .. p1}, Landroid/content/Intent$FlymeInjector;->writeIntentExt(Landroid/content/Intent;Landroid/os/Parcel;)V
 
     iget-object v2, p0, Landroid/content/Intent;->mSmartShowExtras:Landroid/os/Bundle;
 

@@ -249,6 +249,10 @@
 # ZTEME THEME ADD
 /data/system/theme(/.*)?   u:object_r:theme_data_file:s0
 # ZTEME END
+# FLYME:yfy@SHELL.FlymeWallpaer.Featur add for flyme wallpaper relative {@
+/data/system/users/[0-9]+/lock_wallpaper		u:object_r:wallpaper_file:s0
+/data/system/users/[0-9]+/smart_wallpaper_target		u:object_r:wallpaper_file:s0
+# @}
 #############################
 # efs files
 #

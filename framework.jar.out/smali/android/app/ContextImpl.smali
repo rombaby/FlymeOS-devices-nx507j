@@ -757,6 +757,8 @@
 
     invoke-static {}, Landroid/app/ContextImplExtra;->registerNubiaServices()V
 
+    invoke-static {}, Landroid/app/ContextImpl;->registeFlymeManager()V
+
     return-void
 .end method
 

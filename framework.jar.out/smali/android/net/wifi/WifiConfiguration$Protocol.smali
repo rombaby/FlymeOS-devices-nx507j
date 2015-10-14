@@ -19,8 +19,6 @@
 
 .field public static final RSN:I = 0x1
 
-.field public static final WAPI:I = 0x2
-
 .field public static final WPA:I = 0x0
 
 .field public static final strings:[Ljava/lang/String;
