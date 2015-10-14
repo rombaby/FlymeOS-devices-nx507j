@@ -5240,17 +5240,39 @@
 .end method
 
 .method public hasIccCard(I)Z
-    .locals 2
+    .locals 3
     .param p1, "slotId"    # I
 
     .prologue
-    int-to-long v0, p1
+    const/4 v1, 0x0
 
-    invoke-virtual {p0, v0, v1}, Landroid/telephony/TelephonyManager;->hasIccCard(J)Z
+    :try_start_0
+    invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
-    move-result v0
+    move-result-object v2
 
-    return v0
+    invoke-interface {v2, p1}, Lcom/android/internal/telephony/ITelephony;->hasIccCardUsingSlotId(I)Z
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
+
+    move-result v1
+
+    :goto_0
+    return v1
+
+    :catch_0
+    move-exception v0
+
+    .local v0, "ex":Landroid/os/RemoteException;
+    goto :goto_0
+
+    .end local v0    # "ex":Landroid/os/RemoteException;
+    :catch_1
+    move-exception v0
+
+    .local v0, "ex":Ljava/lang/NullPointerException;
+    goto :goto_0
 .end method
 
 .method public iccCloseLogicalChannel(I)Z
